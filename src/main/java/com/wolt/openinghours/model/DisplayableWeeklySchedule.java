@@ -60,7 +60,7 @@ public class DisplayableWeeklySchedule {
 								String.format("Opening hour [%s, %s] has no closing time set.",
 										currentHour.getDayOfWeek(), currentHour));
 					}
-				} else if (hours.indexOf(currentHour) > 0) {
+				} else if (!openingHours.isEmpty()) {
 					buffer.append(String.format("%s - %s", openingHours.pop(), currentHour));
 					if (hours.lastIndexOf(currentHour) + 1 < hours.size()) {
 						buffer.append(", ");
